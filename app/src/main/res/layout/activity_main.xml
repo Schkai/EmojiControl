@@ -22,36 +22,43 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Wie fühlst Du Dich? \nWähle ein passendes Bild:"
-        android:id="@+id/textView2"
+        android:id="@+id/Headline"
         android:layout_centerHorizontal="true"
         android:typeface="serif"
-        android:layout_marginBottom="20dp"
         android:textStyle="italic"
         android:textSize="20dp"
         android:textAlignment="center"
-        />
+        android:padding="20dp"
+        android:background="@color/accent_material_dark"/>
 
-    <ScrollView
+    <HorizontalScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/scrollView"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true">
+        android:id="@+id/EmojiScrollView"
+        android:layout_below="@+id/Headline"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:fillViewport="false"
+        android:clickable="true">
 
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tableLayout"
+            android:id="@+id/EmojiTable"
             android:nestedScrollingEnabled="true"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true">
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:contextClickable="true">
 
             <TableRow
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:id="@+id/Negative">
 
                 <ImageView
-                    android:id="@+id/angst"
+                    android:id="@+id/ängstlich"
                     android:layout_column="0"
                     android:src="@drawable/angst"
                     android:layout_margin="10dp"
@@ -60,31 +67,17 @@
                     android:clickable="true"/>
 
                 <ImageView
-                    android:id="@+id/ekel"
+                    android:id="@+id/beschämt"
                     android:layout_column="1"
-                    android:src="@drawable/ekel"
-                    android:layout_margin="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"/>
-
-                <ImageView
-                    android:id="@+id/scham"
-                    android:layout_column="2"
                     android:src="@drawable/scham"
                     android:layout_margin="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:clickable="true"/>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/trauer"
-                    android:layout_column="0"
+                    android:id="@+id/traurig"
+                    android:layout_column="2"
                     android:src="@drawable/trauer"
                     android:layout_margin="10dp"
                     android:layout_width="wrap_content"
@@ -92,8 +85,8 @@
                     android:clickable="true"/>
 
                 <ImageView
-                    android:id="@+id/schuld"
-                    android:layout_column="1"
+                    android:id="@+id/schuldig"
+                    android:layout_column="3"
                     android:src="@drawable/schuld"
                     android:layout_margin="10dp"
                     android:layout_width="wrap_content"
@@ -101,39 +94,16 @@
                     android:clickable="true"/>
 
                 <ImageView
-                    android:id="@+id/wut"
-                    android:layout_column="2"
+                    android:id="@+id/wütend"
+                    android:layout_column="1"
                     android:src="@drawable/wut"
                     android:layout_margin="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:clickable="true"/>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/ueberraschung"
-                    android:layout_column="0"
-                    android:src="@drawable/ueberraschung"
-                    android:layout_margin="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"/>
-
-                <ImageView
-                    android:id="@+id/hoffnung"
-                    android:layout_column="1"
-                    android:src="@drawable/hoffnung"
-                    android:layout_margin="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"/>
-
-                <ImageView
-                    android:id="@+id/langeweile"
+                    android:id="@+id/gelangweilt"
                     android:layout_column="2"
                     android:src="@drawable/langeweile"
                     android:layout_margin="10dp"
@@ -143,8 +113,37 @@
             </TableRow>
 
             <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:id="@+id/Positive">
+
+                <ImageView
+                    android:id="@+id/freudig"
+                    android:layout_column="0"
+                    android:src="@drawable/freude"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"/>
+
+                <ImageView
+                    android:id="@+id/dankbar"
+                    android:layout_column="1"
+                    android:src="@drawable/dankbarkeit"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"/>
+
+                <ImageView
+                    android:id="@+id/hoffnungsvoll"
+                    android:layout_column="1"
+                    android:src="@drawable/hoffnung"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"/>
 
                 <ImageView
                     android:id="@+id/stolz"
@@ -156,7 +155,7 @@
                     android:clickable="true"/>
 
                 <ImageView
-                    android:id="@+id/zufriedenheit"
+                    android:id="@+id/zufrieden"
                     android:layout_column="1"
                     android:src="@drawable/zufriedenheit"
                     android:layout_margin="10dp"
@@ -165,39 +164,36 @@
                     android:clickable="true"/>
 
                 <ImageView
-                    android:id="@+id/begeisterung"
+                    android:id="@+id/begeistert"
                     android:layout_column="2"
                     android:src="@drawable/begeisterung"
                     android:layout_margin="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:clickable="true"/>
+
             </TableRow>
 
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/freude"
-                    android:layout_column="0"
-                    android:src="@drawable/freude"
-                    android:layout_margin="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"/>
-
-                <ImageView
-                    android:id="@+id/dankbarkeit"
-                    android:layout_column="1"
-                    android:src="@drawable/dankbarkeit"
-                    android:layout_margin="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"/>
-            </TableRow>
         </TableLayout>
-    </ScrollView>
+    </HorizontalScrollView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Einträge\nbearbeiten"
+        android:id="@+id/button"
+        android:layout_below="@+id/EmojiScrollView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Einträge\nanalysieren"
+        android:id="@+id/button2"
+        android:layout_below="@+id/EmojiScrollView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
 
 
 </RelativeLayout>
