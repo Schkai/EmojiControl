@@ -29,13 +29,13 @@ public class InputIntensity extends AppCompatActivity
         final String emotion = extras.getString("Emotion");
         final int imageRes = extras.getInt("image");
 
-        inputHeadline = (TextView) findViewById(R.id.inputHeadline);
+        inputHeadline = (TextView) findViewById(R.id.headline0);
         inputHeadline.setText(emotion);
 
-        imageView = (ImageView) findViewById(R.id.imageView);
+        imageView = (ImageView) findViewById(R.id.emoji0);
         imageView.setImageDrawable(getResources().getDrawable(imageRes));
 
-        save = (Button) findViewById(R.id.save);
+        save = (Button) findViewById(R.id.save0);
         save.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -47,7 +47,7 @@ public class InputIntensity extends AppCompatActivity
             }
         });
 
-        home = (Button) findViewById(R.id.home);
+        home = (Button) findViewById(R.id.home0);
         home.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -58,7 +58,7 @@ public class InputIntensity extends AppCompatActivity
             }
         });
 
-        next = (Button) findViewById(R.id.next);
+        next = (Button) findViewById(R.id.next0);
         next.setOnClickListener(new View.OnClickListener()
         {
             @Override

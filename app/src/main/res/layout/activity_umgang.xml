@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="de.ur.emojicontrol2.Umgang">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/headline4"
+        android:typeface="sans"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:hint="Hier steht die Emotion"
+        android:padding="20dp"
+        android:background="@color/accent_material_dark"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/emoji4"
+        android:layout_below="@+id/headline4"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/angst"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/question40"
+        android:typeface="sans"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:text="Wie bist Du mit diesem Gefühl umgegangen?"
+        android:padding="10dp"
+        android:layout_below="@+id/emoji4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingBottom="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="(Mehrfachantwort möglich)"
+        android:id="@+id/textView16"
+        android:layout_below="@+id/question40"
+        android:layout_centerHorizontal="true"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ich habe meine Aufmerksamkeit auf das Gefühl gerichtet und es genossen"
+        android:id="@+id/radioButton4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView16"
+        android:checked="false"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ich habe mir weitere positive Ereignisse vorgestellt"
+        android:id="@+id/radioButton5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/radioButton4"
+        android:checked="false"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mir ist der Gedanke gekommen, dass das Gefühl nicht forbestehen wird"
+        android:id="@+id/radioButton6"
+        android:layout_below="@+id/radioButton5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:checked="false"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/textView17"
+        android:typeface="sans"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:text="Welche Strategie hast Du eingesetzt, um mit dem Gefühl umzugehen?"
+        android:padding="10dp"
+        android:paddingBottom="20dp"
+        android:layout_below="@+id/radioButton14"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="(Mehrfachantwort möglich)"
+        android:id="@+id/textView18"
+        android:layout_below="@+id/textView17"
+        android:layout_centerHorizontal="true"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ich habe die Situation verlassen"
+        android:id="@+id/radioButton7"
+        android:layout_below="@+id/textView18"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:checked="false"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ich habe versucht, die Situation zu verändern"
+        android:id="@+id/radioButton8"
+        android:layout_below="@+id/radioButton7"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:checked="false"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ich habe versucht, die Situation umzudeuten (z. B. mittels Humor, Perspektivenübernahme, veränderte Ursachenzuschreibung etc.)"
+        android:id="@+id/radioButton9"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/radioButton8"
+        android:checked="false"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ich habe versucht, mich abzulenken"
+        android:id="@+id/radioButton10"
+        android:layout_below="@+id/radioButton9"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:checked="false"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ich habe eine Substanz zu mir genommen (z. B. Nikotin oder Alkohol)"
+        android:id="@+id/radioButton11"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/radioButton10"
+        android:layout_alignParentLeft="true"
+        android:checked="false"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ich habe lange nachgegrübelt"
+        android:id="@+id/radioButton12"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/radioButton11"
+        android:layout_alignParentLeft="true"
+        android:checked="false"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ich habe gewartet, bis es vorbei geht, weil ich mich nicht in der Lage sah, irgendetwas ändern zu können"
+        android:id="@+id/radioButton13"
+        android:layout_below="@+id/radioButton12"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:checked="false"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Zurück zur Startseite"
+        android:id="@+id/button3"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/high12"
+        android:layout_below="@+id/back1"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eintrag speichern\nund zurück"
+        android:id="@+id/back1"
+        android:textSize="12dp"
+        android:layout_below="@+id/radioButton13"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK, weiter zur\nnächsten Frage"
+        android:id="@+id/button5"
+        android:textSize="12dp"
+        android:layout_below="@+id/radioButton13"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ich habe mir überlegt, wie ich die Situation verbessern könnte"
+        android:id="@+id/radioButton14"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/radioButton6"
+        android:checked="false"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"/>
+
+
+</RelativeLayout>
+</ScrollView>

@@ -23,6 +23,8 @@
         </activity>
         <activity android:name=".Ausloeser">
         </activity>
+        <activity android:name=".Umgang">
+        </activity>
     </application>
 
 </manifest>
