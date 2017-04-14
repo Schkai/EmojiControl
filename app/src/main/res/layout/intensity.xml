@@ -110,7 +110,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Zurück zur Startseite"
-        android:id="@+id/button3"
+        android:id="@+id/home"
         android:layout_below="@+id/save"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>

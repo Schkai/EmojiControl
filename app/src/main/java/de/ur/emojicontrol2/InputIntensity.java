@@ -1,5 +1,6 @@
 package de.ur.emojicontrol2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,16 +15,20 @@ public class InputIntensity extends AppCompatActivity
     ImageView imageView;
     TextView inputHeadline;
     Button save;
+    Button home;
+    Button next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_input);
+        setContentView(R.layout.intensity);
 
         Bundle extras = getIntent().getExtras();
-        String emotion = extras.getString("Emotion");
-        int imageRes = extras.getInt("image");
+
+        final String emotion = extras.getString("Emotion");
+        final int imageRes = extras.getInt("image");
+
         inputHeadline = (TextView) findViewById(R.id.inputHeadline);
         inputHeadline.setText(emotion);
 
@@ -41,6 +46,32 @@ public class InputIntensity extends AppCompatActivity
                 finish();
             }
         });
+
+        home = (Button) findViewById(R.id.home);
+        home.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent i = new Intent(InputIntensity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
+
+        next = (Button) findViewById(R.id.next);
+        next.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent i = new Intent(InputIntensity.this, Reaktionsmuster.class);
+                i.putExtra("Emotion", emotion);
+                i.putExtra("image", imageRes);
+
+                startActivity(i);
+            }
+        });
+
 
     }
 }
