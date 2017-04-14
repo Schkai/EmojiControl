@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity
             {
                 Intent i = new Intent(MainActivity.this, InputActivity.class);
                 i.putExtra("Emotion", "Du bist begeistert");
-                i.putExtra("image",R.drawable.begeisterung);
+                i.putExtra("image",R.drawable.begeistert);
                 startActivity(i);
             }
         });
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity
             {
                 Intent i = new Intent(MainActivity.this, InputActivity.class);
                 i.putExtra("Emotion", "Du bist dankbar");
-                i.putExtra("image",R.drawable.dankbarkeit);
+                i.putExtra("image",R.drawable.dankbar);
                 startActivity(i);
             }
         });
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity
             {
                 Intent i = new Intent(MainActivity.this, InputActivity.class);
                 i.putExtra("Emotion", "Du bist voller Hoffnung");
-                i.putExtra("image",R.drawable.hoffnung);
+                i.putExtra("image",R.drawable.hoffnungsvoll);
                 startActivity(i);
             }
         });
@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity
             {
                 Intent i = new Intent(MainActivity.this, InputActivity.class);
                 i.putExtra("Emotion", "Du bist zufrieden");
-                i.putExtra("image",R.drawable.zufriedenheit);
+                i.putExtra("image",R.drawable.zufrieden);
                 startActivity(i);
             }
         });
