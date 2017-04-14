@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Wie fühlst Du Dich? \nWähle ein passendes Bild:"
+        android:text="Was fühlst Du? \nWähle ein passendes Bild:"
         android:id="@+id/Headline"
         android:layout_centerHorizontal="true"
         android:typeface="serif"
@@ -130,7 +130,7 @@
                 <ImageView
                     android:id="@+id/dankbar"
                     android:layout_column="1"
-                    android:src="@drawable/dankbarkeit"
+                    android:src="@drawable/dankbar"
                     android:layout_margin="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -139,7 +139,7 @@
                 <ImageView
                     android:id="@+id/hoffnungsvoll"
                     android:layout_column="1"
-                    android:src="@drawable/hoffnung"
+                    android:src="@drawable/hoffnungsvoll"
                     android:layout_margin="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -157,7 +157,7 @@
                 <ImageView
                     android:id="@+id/zufrieden"
                     android:layout_column="1"
-                    android:src="@drawable/zufriedenheit"
+                    android:src="@drawable/zufrieden"
                     android:layout_margin="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -166,7 +166,7 @@
                 <ImageView
                     android:id="@+id/begeistert"
                     android:layout_column="2"
-                    android:src="@drawable/begeisterung"
+                    android:src="@drawable/begeistert"
                     android:layout_margin="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
