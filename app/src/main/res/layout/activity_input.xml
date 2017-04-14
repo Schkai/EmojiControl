@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,15 +13,15 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="de.ur.emojicontrol2.InputActivity">
+    tools:context=".InputIntensity"
+    android:nestedScrollingEnabled="true">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/inputHeadline"
-        android:typeface="serif"
-        android:textStyle="italic"
+        android:typeface="sans"
         android:textSize="20dp"
         android:textAlignment="center"
         android:layout_alignParentTop="true"
@@ -38,8 +43,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/intensity"
-        android:typeface="serif"
-        android:textStyle="italic"
+        android:typeface="sans"
         android:textSize="20dp"
         android:textAlignment="center"
         android:text="Wie intensiv ist dieses Gefühl?"
@@ -53,7 +57,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/ratingBar"
         android:numStars="5"
-        android:layout_below="@+id/intensity"
+        android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true"/>
 
     <TextView
@@ -61,12 +65,11 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/textView"
-        android:typeface="serif"
-        android:textStyle="italic"
-        android:textSize="14dp"
+        android:typeface="sans"
+        android:textSize="12dp"
         android:textAlignment="center"
         android:text="Gar nicht\nintensiv"
-        android:layout_below="@+id/ratingBar"
+        android:layout_below="@+id/intensity"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
 
@@ -75,12 +78,11 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/textView2"
-        android:typeface="serif"
-        android:textStyle="italic"
-        android:textSize="14dp"
+        android:typeface="sans"
+        android:textSize="12dp"
         android:textAlignment="center"
         android:text="Extrem\nintensiv"
-        android:layout_below="@+id/ratingBar"
+        android:layout_below="@+id/intensity"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"/>
 
@@ -89,19 +91,29 @@
         android:layout_height="wrap_content"
         android:text="Eintrag speichern\nund zurück"
         android:id="@+id/save"
-        android:layout_alignParentBottom="true"
+        android:textSize="12dp"
+        android:layout_below="@+id/ratingBar"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textSize="12dp"/>
+        android:layout_alignParentStart="true"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="OK, weiter zur\nnächsten Frage"
         android:id="@+id/next"
-        android:layout_alignParentBottom="true"
+        android:textSize="12dp"
+        android:layout_below="@+id/ratingBar"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:textSize="12dp"/>
+        android:layout_alignParentEnd="true"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Zurück zur Startseite"
+        android:id="@+id/button3"
+        android:layout_below="@+id/save"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
 
 </RelativeLayout>
+</ScrollView>

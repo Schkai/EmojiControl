@@ -3,11 +3,8 @@ package de.ur.emojicontrol2;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TableLayout;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -27,7 +24,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(MainActivity.this, InputActivity.class);
+                Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du hast Angst");
                 i.putExtra("image",R.drawable.angst);
                 startActivity(i);
@@ -40,7 +37,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(MainActivity.this, InputActivity.class);
+                Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du bist begeistert");
                 i.putExtra("image",R.drawable.begeistert);
                 startActivity(i);
@@ -53,7 +50,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(MainActivity.this, InputActivity.class);
+                Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du bist dankbar");
                 i.putExtra("image",R.drawable.dankbar);
                 startActivity(i);
@@ -67,7 +64,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(MainActivity.this, InputActivity.class);
+                Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du freust Dich");
                 i.putExtra("image",R.drawable.freude);
                 startActivity(i);
@@ -80,7 +77,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(MainActivity.this, InputActivity.class);
+                Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du bist voller Hoffnung");
                 i.putExtra("image",R.drawable.hoffnungsvoll);
                 startActivity(i);
@@ -93,7 +90,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(MainActivity.this, InputActivity.class);
+                Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du langweilst Dich");
                 i.putExtra("image",R.drawable.langeweile);
                 startActivity(i);
@@ -106,7 +103,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(MainActivity.this, InputActivity.class);
+                Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du schämst Dich");
                 i.putExtra("image",R.drawable.scham);
                 startActivity(i);
@@ -119,7 +116,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(MainActivity.this, InputActivity.class);
+                Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du fühlst Dich schuldig");
                 i.putExtra("image",R.drawable.schuld);
                 startActivity(i);
@@ -132,7 +129,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(MainActivity.this, InputActivity.class);
+                Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du bist stolz");
                 i.putExtra("image",R.drawable.stolz);
                 startActivity(i);
@@ -145,7 +142,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(MainActivity.this, InputActivity.class);
+                Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du bist traurig");
                 i.putExtra("image",R.drawable.trauer);
                 startActivity(i);
@@ -160,7 +157,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(MainActivity.this, InputActivity.class);
+                Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du bist wütend");
                 i.putExtra("image",R.drawable.wut);
                 startActivity(i);
@@ -173,7 +170,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(MainActivity.this, InputActivity.class);
+                Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du bist zufrieden");
                 i.putExtra("image",R.drawable.zufrieden);
                 startActivity(i);
