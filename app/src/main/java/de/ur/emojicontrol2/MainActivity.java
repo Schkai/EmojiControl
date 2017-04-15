@@ -1,11 +1,22 @@
 package de.ur.emojicontrol2;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Random;
+
+import static android.R.attr.key;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -14,9 +25,13 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
         setupEmojiButtons();
 
         Button edit = (Button) findViewById(R.id.bearbeiten);
+        edit.setText(getKey());
         edit.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -27,6 +42,52 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
+
+        // Write a message to the database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference();
+        Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        int month = calendar.get(Calendar.MONTH);
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+
+        String date = ""+month+day;
+        String time = ""+hour+minute;
+
+        myRef.child(getKey()).child(date).child(time).setValue("test");
+    }
+
+    private String getKey()
+    {
+        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+        String result = sharedPref.getString("ID","NoEntry");
+        if (result=="NoEntry")
+        {
+
+            result=getRandomString();
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putString("ID",result);
+            editor.commit();
+
+        }
+        return result;
+
+
+
+    }
+
+    private String getRandomString()
+    {
+        Random random = new Random();
+        String result ="";
+        String allowedCharacters = "0123456789qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM";
+        for (int i = 0; i<8; i++)
+        {
+            result+=allowedCharacters.charAt(random.nextInt(allowedCharacters.length()));
+        }
+        return result;
+
     }
 
     private void setupEmojiButtons()
