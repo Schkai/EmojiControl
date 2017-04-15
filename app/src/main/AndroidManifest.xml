@@ -25,6 +25,8 @@
         </activity>
         <activity android:name=".Umgang">
         </activity>
+        <activity android:name=".Bearbeiten">
+        </activity>
     </application>
 
 </manifest>

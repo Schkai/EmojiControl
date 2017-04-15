@@ -29,13 +29,13 @@ public class Reaktionsmuster extends AppCompatActivity
         final String emotion = extras.getString("Emotion");
         final int imageRes = extras.getInt("image");
 
-        inputHeadline = (TextView) findViewById(R.id.headline0);
+        inputHeadline = (TextView) findViewById(R.id.headline1);
         inputHeadline.setText(emotion);
 
-        imageView = (ImageView) findViewById(R.id.emoji0);
+        imageView = (ImageView) findViewById(R.id.emoji1);
         imageView.setImageDrawable(getResources().getDrawable(imageRes));
 
-        save = (Button) findViewById(R.id.save0);
+        save = (Button) findViewById(R.id.back1);
         save.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -47,7 +47,7 @@ public class Reaktionsmuster extends AppCompatActivity
             }
         });
 
-        home = (Button) findViewById(R.id.home);
+        home = (Button) findViewById(R.id.home1);
         home.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -58,7 +58,7 @@ public class Reaktionsmuster extends AppCompatActivity
             }
         });
 
-        next = (Button) findViewById(R.id.next);
+        next = (Button) findViewById(R.id.next1);
         next.setOnClickListener(new View.OnClickListener()
         {
             @Override

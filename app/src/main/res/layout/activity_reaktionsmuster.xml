@@ -183,7 +183,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Zurück zur Startseite"
-        android:id="@+id/start1"
+        android:id="@+id/home1"
         android:layout_alignParentBottom="true"
         android:layout_alignEnd="@+id/high12"
         android:layout_below="@+id/back1"/>

@@ -28,12 +28,12 @@ public class Gefuehl extends AppCompatActivity
         final String emotion = extras.getString("Emotion");
         final int imageRes = extras.getInt("image");
 
-        inputHeadline = (TextView) findViewById(R.id.headline0);
+        inputHeadline = (TextView) findViewById(R.id.headline2);
         inputHeadline.setText(emotion);
 
-        imageView = (ImageView) findViewById(R.id.emoji0);
+        imageView = (ImageView) findViewById(R.id.emoji2);
         imageView.setImageDrawable(getResources().getDrawable(imageRes));
-        save = (Button) findViewById(R.id.save0);
+        save = (Button) findViewById(R.id.back2);
         save.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -45,7 +45,7 @@ public class Gefuehl extends AppCompatActivity
             }
         });
 
-        home = (Button) findViewById(R.id.home);
+        home = (Button) findViewById(R.id.home2);
         home.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -56,7 +56,7 @@ public class Gefuehl extends AppCompatActivity
             }
         });
 
-        next = (Button) findViewById(R.id.next);
+        next = (Button) findViewById(R.id.next2);
         next.setOnClickListener(new View.OnClickListener()
         {
             @Override

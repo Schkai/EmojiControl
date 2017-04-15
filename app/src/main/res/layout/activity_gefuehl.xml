@@ -204,7 +204,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Zurück zur Startseite"
-        android:id="@+id/start2"
+        android:id="@+id/home2"
         android:layout_alignParentBottom="true"
         android:layout_alignEnd="@+id/high12"
         android:layout_below="@+id/back2"/>

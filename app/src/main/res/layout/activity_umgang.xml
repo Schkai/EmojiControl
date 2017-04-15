@@ -205,16 +205,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Zurück zur Startseite"
-        android:id="@+id/button3"
+        android:id="@+id/start4"
         android:layout_alignParentBottom="true"
         android:layout_alignEnd="@+id/high12"
-        android:layout_below="@+id/back1"/>
+        android:layout_below="@+id/back4"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Eintrag speichern\nund zurück"
-        android:id="@+id/back1"
+        android:id="@+id/back4"
         android:textSize="12dp"
         android:layout_below="@+id/radioButton13"
         android:layout_alignParentLeft="true"
@@ -223,7 +223,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="OK, weiter zur\nnächsten Frage"
+        android:text="FERTIG"
         android:id="@+id/button5"
         android:textSize="12dp"
         android:layout_below="@+id/radioButton13"
