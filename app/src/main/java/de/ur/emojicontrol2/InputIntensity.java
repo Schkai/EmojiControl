@@ -28,6 +28,9 @@ public class InputIntensity extends AppCompatActivity
 
         final String emotion = extras.getString("Emotion");
         final int imageRes = extras.getInt("image");
+        final String emo = extras.getString("emo");
+        final String key = extras.getString("key");
+
 
         inputHeadline = (TextView) findViewById(R.id.headline0);
         inputHeadline.setText(emotion);

@@ -20,13 +20,12 @@ import static android.R.attr.key;
 
 public class MainActivity extends AppCompatActivity
 {
+    int month, day, hour, minute;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
 
         setupEmojiButtons();
 
@@ -44,18 +43,18 @@ public class MainActivity extends AppCompatActivity
         });
 
         // Write a message to the database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference();
+        //FirebaseDatabase database = FirebaseDatabase.getInstance();
+        //DatabaseReference myRef = database.getReference();
         Calendar calendar = Calendar.getInstance();
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
-        int month = calendar.get(Calendar.MONTH);
-        int hour = calendar.get(Calendar.HOUR_OF_DAY);
-        int minute = calendar.get(Calendar.MINUTE);
+        day = calendar.get(Calendar.DAY_OF_MONTH);
+        month = calendar.get(Calendar.MONTH);
+        hour = calendar.get(Calendar.HOUR_OF_DAY);
+        minute = calendar.get(Calendar.MINUTE);
 
-        String date = ""+month+day;
-        String time = ""+hour+minute;
+        //String date = ""+month+day;
+        //String time = ""+hour+minute;
 
-        myRef.child(getKey()).child(date).child(time).setValue("test");
+        //myRef.child(getKey()).child(date).child(time).setValue("test");
     }
 
     private String getKey()
@@ -64,17 +63,12 @@ public class MainActivity extends AppCompatActivity
         String result = sharedPref.getString("ID","NoEntry");
         if (result=="NoEntry")
         {
-
             result=getRandomString();
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putString("ID",result);
             editor.commit();
-
         }
         return result;
-
-
-
     }
 
     private String getRandomString()
@@ -87,7 +81,6 @@ public class MainActivity extends AppCompatActivity
             result+=allowedCharacters.charAt(random.nextInt(allowedCharacters.length()));
         }
         return result;
-
     }
 
     private void setupEmojiButtons()
@@ -101,6 +94,14 @@ public class MainActivity extends AppCompatActivity
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du hast Angst");
                 i.putExtra("image",R.drawable.angst);
+                i.putExtra("emo", "Angst");
+                i.putExtra("key",getKey());
+
+                i.putExtra("month",month);
+                i.putExtra("day",day);
+                i.putExtra("hour",hour);
+                i.putExtra("month",minute);
+
                 startActivity(i);
             }
         });
@@ -114,6 +115,14 @@ public class MainActivity extends AppCompatActivity
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du bist begeistert");
                 i.putExtra("image",R.drawable.begeistert);
+                i.putExtra("emo", "Begeisterung");
+                i.putExtra("key",getKey());
+
+                i.putExtra("month",month);
+                i.putExtra("day",day);
+                i.putExtra("hour",hour);
+                i.putExtra("month",minute);
+
                 startActivity(i);
             }
         });
@@ -127,6 +136,14 @@ public class MainActivity extends AppCompatActivity
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du bist dankbar");
                 i.putExtra("image",R.drawable.dankbar);
+                i.putExtra("emo", "Dankbarkeit");
+                i.putExtra("key",getKey());
+
+                i.putExtra("month",month);
+                i.putExtra("day",day);
+                i.putExtra("hour",hour);
+                i.putExtra("month",minute);
+
                 startActivity(i);
             }
         });
@@ -141,6 +158,14 @@ public class MainActivity extends AppCompatActivity
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du freust Dich");
                 i.putExtra("image",R.drawable.freude);
+                i.putExtra("emo", "Freude");
+                i.putExtra("key",getKey());
+
+                i.putExtra("month",month);
+                i.putExtra("day",day);
+                i.putExtra("hour",hour);
+                i.putExtra("month",minute);
+
                 startActivity(i);
             }
         });
@@ -154,6 +179,14 @@ public class MainActivity extends AppCompatActivity
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du bist voller Hoffnung");
                 i.putExtra("image",R.drawable.hoffnungsvoll);
+                i.putExtra("emo", "Hoffnung");
+                i.putExtra("key",getKey());
+
+                i.putExtra("month",month);
+                i.putExtra("day",day);
+                i.putExtra("hour",hour);
+                i.putExtra("month",minute);
+
                 startActivity(i);
             }
         });
@@ -167,6 +200,14 @@ public class MainActivity extends AppCompatActivity
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du langweilst Dich");
                 i.putExtra("image",R.drawable.langeweile);
+                i.putExtra("emo", "Langeweile");
+                i.putExtra("key",getKey());
+
+                i.putExtra("month",month);
+                i.putExtra("day",day);
+                i.putExtra("hour",hour);
+                i.putExtra("month",minute);
+
                 startActivity(i);
             }
         });
@@ -180,6 +221,14 @@ public class MainActivity extends AppCompatActivity
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du schämst Dich");
                 i.putExtra("image",R.drawable.scham);
+                i.putExtra("emo", "Scham");
+                i.putExtra("key",getKey());
+
+                i.putExtra("month",month);
+                i.putExtra("day",day);
+                i.putExtra("hour",hour);
+                i.putExtra("month",minute);
+
                 startActivity(i);
             }
         });
@@ -193,6 +242,14 @@ public class MainActivity extends AppCompatActivity
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du fühlst Dich schuldig");
                 i.putExtra("image",R.drawable.schuld);
+                i.putExtra("emo", "Schuld");
+                i.putExtra("key",getKey());
+
+                i.putExtra("month",month);
+                i.putExtra("day",day);
+                i.putExtra("hour",hour);
+                i.putExtra("month",minute);
+
                 startActivity(i);
             }
         });
@@ -206,6 +263,14 @@ public class MainActivity extends AppCompatActivity
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du bist stolz");
                 i.putExtra("image",R.drawable.stolz);
+                i.putExtra("emo", "Stolz");
+                i.putExtra("key",getKey());
+
+                i.putExtra("month",month);
+                i.putExtra("day",day);
+                i.putExtra("hour",hour);
+                i.putExtra("month",minute);
+
                 startActivity(i);
             }
         });
@@ -219,6 +284,14 @@ public class MainActivity extends AppCompatActivity
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du bist traurig");
                 i.putExtra("image",R.drawable.trauer);
+                i.putExtra("emo", "Trauer");
+                i.putExtra("key",getKey());
+
+                i.putExtra("month",month);
+                i.putExtra("day",day);
+                i.putExtra("hour",hour);
+                i.putExtra("month",minute);
+
                 startActivity(i);
             }
         });
@@ -234,6 +307,14 @@ public class MainActivity extends AppCompatActivity
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du bist wütend");
                 i.putExtra("image",R.drawable.wut);
+                i.putExtra("emo", "Wut");
+                i.putExtra("key",getKey());
+
+                i.putExtra("month",month);
+                i.putExtra("day",day);
+                i.putExtra("hour",hour);
+                i.putExtra("month",minute);
+
                 startActivity(i);
             }
         });
@@ -247,6 +328,14 @@ public class MainActivity extends AppCompatActivity
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
                 i.putExtra("Emotion", "Du bist zufrieden");
                 i.putExtra("image",R.drawable.zufrieden);
+                i.putExtra("emo", "Zufriedenheit");
+                i.putExtra("key",getKey());
+
+                i.putExtra("month",month);
+                i.putExtra("day",day);
+                i.putExtra("hour",hour);
+                i.putExtra("month",minute);
+
                 startActivity(i);
             }
         });

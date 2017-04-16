@@ -17,18 +17,19 @@
     android:nestedScrollingEnabled="true">
 
     <TextView
+        android:id="@+id/headline0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/headline0"
-        android:typeface="sans"
-        android:textSize="20dp"
-        android:textAlignment="center"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:background="@color/accent_material_dark"
         android:hint="Hier steht die Emotion"
         android:padding="20dp"
-        android:background="@color/accent_material_dark"/>
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20dp"
+        android:typeface="sans"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -51,6 +52,34 @@
         android:layout_below="@+id/emoji0"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/emoji0"
+        android:padding="10dp"
+        android:text="Wie intensiv ist dieses Gefühl?"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20dp"
+        android:typeface="sans"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/emoji0"
+        android:padding="10dp"
+        android:text="Wie intensiv ist dieses Gefühl?"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20dp"
+        android:typeface="sans"/>
 
     <RatingBar
         android:layout_width="wrap_content"
@@ -114,6 +143,15 @@
         android:layout_below="@+id/save0"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="TextView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
 
 </RelativeLayout>
 </ScrollView>
