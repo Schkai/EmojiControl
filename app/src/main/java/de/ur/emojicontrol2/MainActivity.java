@@ -20,17 +20,24 @@ import static android.R.attr.key;
 
 public class MainActivity extends AppCompatActivity
 {
-    int month, day, hour, minute;
+    String year, month, day, hour, minute;
+    FirebaseDatabase database;
+    static DatabaseReference myRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference();
+
+        updateDate();
+
         setupEmojiButtons();
 
         Button edit = (Button) findViewById(R.id.bearbeiten);
-        edit.setText(getKey());
         edit.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -42,19 +49,35 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        // Write a message to the database
-        //FirebaseDatabase database = FirebaseDatabase.getInstance();
-        //DatabaseReference myRef = database.getReference();
+
+    }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        updateDate();
+    }
+
+    private void updateDate()
+    {
         Calendar calendar = Calendar.getInstance();
-        day = calendar.get(Calendar.DAY_OF_MONTH);
-        month = calendar.get(Calendar.MONTH);
-        hour = calendar.get(Calendar.HOUR_OF_DAY);
-        minute = calendar.get(Calendar.MINUTE);
+        year = ""+calendar.get(Calendar.YEAR);
+        day = ""+calendar.get(Calendar.DAY_OF_MONTH);
+        if (day.length()<2){day="0"+calendar.get(Calendar.DAY_OF_MONTH);}
+        month = ""+calendar.get(Calendar.MONTH);
+        if (month.length()<2){month="0"+calendar.get(Calendar.MONTH);}
+        hour = ""+calendar.get(Calendar.HOUR_OF_DAY);
+        if (hour.length()<2){hour="0"+calendar.get(Calendar.HOUR_OF_DAY);}
+        minute = ""+calendar.get(Calendar.MINUTE);
+        if (minute.length()<2){minute="0"+calendar.get(Calendar.MINUTE);}
 
-        //String date = ""+month+day;
-        //String time = ""+hour+minute;
 
-        //myRef.child(getKey()).child(date).child(time).setValue("test");
+    }
+
+    public static DatabaseReference getReference()
+    {
+        return myRef;
     }
 
     private String getKey()
@@ -101,6 +124,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
                 i.putExtra("minute",minute);
+                i.putExtra("year",year);
 
                 startActivity(i);
             }
@@ -122,6 +146,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
                 i.putExtra("minute",minute);
+                i.putExtra("year",year);
 
                 startActivity(i);
             }
@@ -143,6 +168,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
                 i.putExtra("minute",minute);
+                i.putExtra("year",year);
 
                 startActivity(i);
             }
@@ -165,6 +191,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
                 i.putExtra("minute",minute);
+                i.putExtra("year",year);
 
                 startActivity(i);
             }
@@ -186,6 +213,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
                 i.putExtra("minute",minute);
+                i.putExtra("year",year);
 
                 startActivity(i);
             }
@@ -207,6 +235,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
                 i.putExtra("minute",minute);
+                i.putExtra("year",year);
 
                 startActivity(i);
             }
@@ -228,6 +257,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
                 i.putExtra("minute",minute);
+                i.putExtra("year",year);
 
                 startActivity(i);
             }
@@ -249,6 +279,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
                 i.putExtra("minute",minute);
+                i.putExtra("year",year);
 
                 startActivity(i);
             }
@@ -270,6 +301,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
                 i.putExtra("minute",minute);
+                i.putExtra("year",year);
 
                 startActivity(i);
             }
@@ -291,6 +323,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
                 i.putExtra("minute",minute);
+                i.putExtra("year",year);
 
                 startActivity(i);
             }
@@ -314,6 +347,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
                 i.putExtra("minute",minute);
+                i.putExtra("year",year);
 
                 startActivity(i);
             }
@@ -335,6 +369,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
                 i.putExtra("minute",minute);
+                i.putExtra("year",year);
 
                 startActivity(i);
             }

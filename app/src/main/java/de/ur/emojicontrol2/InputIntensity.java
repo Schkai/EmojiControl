@@ -6,8 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class InputIntensity extends AppCompatActivity
 {
@@ -32,14 +36,15 @@ public class InputIntensity extends AppCompatActivity
         final String emo = extras.getString("emo");
         final String key = extras.getString("key");
 
-        final int month = extras.getInt("month");
-        final int day = extras.getInt("day");
-        final int hour = extras.getInt("hour");
-        final int minute = extras.getInt("minute");
+        final String month = extras.getString("month");
+        final String day = extras.getString("day");
+        final String hour = extras.getString("hour");
+        final String minute = extras.getString("minute");
+        final String year = extras.getString("year");
 
 
         entry = (TextView) findViewById(R.id.textView4);
-        entry.setText("Eintrag vom "+day+"."+month+" "+hour+":"+minute+" Uhr");
+        entry.setText("Eintrag vom "+day+"."+month+"."+year+" "+hour+":"+minute+" Uhr");
 
 
         inputHeadline = (TextView) findViewById(R.id.headline0);
@@ -54,8 +59,7 @@ public class InputIntensity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Toast toast = Toast.makeText(InputIntensity.this, "Eintrag gespeichert", Toast.LENGTH_SHORT);
-                toast.show();
+                saveData(key, year, month, day, hour, minute, emo);
                 finish();
             }
         });
@@ -66,6 +70,7 @@ public class InputIntensity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                saveData(key, year, month, day, hour, minute, emo);
                 Intent i = new Intent(InputIntensity.this, MainActivity.class);
                 startActivity(i);
             }
@@ -77,14 +82,35 @@ public class InputIntensity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+
+                saveData(key, year, month, day, hour, minute, emo);
                 Intent i = new Intent(InputIntensity.this, Reaktionsmuster.class);
                 i.putExtra("Emotion", emotion);
                 i.putExtra("image", imageRes);
+                i.putExtra("key",key);
+                i.putExtra("month",month);
+                i.putExtra("day",day);
+                i.putExtra("hour",hour);
+                i.putExtra("minute",minute);
+                i.putExtra("year",year);
 
                 startActivity(i);
             }
         });
 
+    }
+
+    private void saveData(String key, String year, String month, String day, String hour, String minute, String emo)
+    {
+        DatabaseReference myRef = MainActivity.getReference();
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Emotion").setValue(emo);
+
+        RatingBar ratingBar = (RatingBar) findViewById(R.id.ratingBar0);
+        float intensity = ratingBar.getRating();
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Intensity").setValue(intensity);
+
+        Toast toast = Toast.makeText(InputIntensity.this, "Eintrag gespeichert", Toast.LENGTH_SHORT);
+        toast.show();
 
     }
 }

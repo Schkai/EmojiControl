@@ -6,14 +6,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Reaktionsmuster extends AppCompatActivity
 {
 
     ImageView imageView;
     TextView inputHeadline;
+    TextView entry;
     Button save;
     Button home;
     Button next;
@@ -28,6 +33,17 @@ public class Reaktionsmuster extends AppCompatActivity
 
         final String emotion = extras.getString("Emotion");
         final int imageRes = extras.getInt("image");
+        final String key = extras.getString("key");
+        final String month = extras.getString("month");
+        final String day = extras.getString("day");
+        final String hour = extras.getString("hour");
+        final String minute = extras.getString("minute");
+        final String year = extras.getString("year");
+
+
+        entry = (TextView) findViewById(R.id.textView3);
+        entry.setText("Eintrag vom "+day+"."+month+"."+year+" "+hour+":"+minute+" Uhr");
+
 
         inputHeadline = (TextView) findViewById(R.id.headline1);
         inputHeadline.setText(emotion);
@@ -41,8 +57,7 @@ public class Reaktionsmuster extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Toast toast = Toast.makeText(Reaktionsmuster.this, "Eintrag gespeichert", Toast.LENGTH_SHORT);
-                toast.show();
+                saveData(key, year, month, day, hour, minute);
                 finish();
             }
         });
@@ -53,6 +68,7 @@ public class Reaktionsmuster extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                saveData(key, year, month, day, hour, minute);
                 Intent i = new Intent(Reaktionsmuster.this, MainActivity.class);
                 startActivity(i);
             }
@@ -64,12 +80,43 @@ public class Reaktionsmuster extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                saveData(key, year, month, day, hour, minute);
+
                 Intent i = new Intent(Reaktionsmuster.this, Gefuehl.class);
                 i.putExtra("Emotion", emotion);
                 i.putExtra("image", imageRes);
+                i.putExtra("key",key);
+                i.putExtra("month",month);
+                i.putExtra("day",day);
+                i.putExtra("hour",hour);
+                i.putExtra("minute",minute);
+                i.putExtra("year",year);
 
                 startActivity(i);
             }
         });
+    }
+
+    private void saveData(String key, String year, String month, String day, String hour, String minute)
+    {
+        DatabaseReference myRef = MainActivity.getReference();
+
+        float value;
+
+        RatingBar ratingBar = (RatingBar) findViewById(R.id.ratingBar10);
+        value = ratingBar.getRating();
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Anspannung").setValue(value);
+
+        RatingBar ratingBar1 = (RatingBar) findViewById(R.id.ratingBar11);
+        value = ratingBar1.getRating();
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Tendenz").setValue(value);
+
+        RatingBar ratingBar2 = (RatingBar) findViewById(R.id.ratingBar12);
+        value = ratingBar2.getRating();
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Aufmerksamkeit").setValue(value);
+
+        Toast toast = Toast.makeText(Reaktionsmuster.this, "Eintrag gespeichert", Toast.LENGTH_SHORT);
+        toast.show();
+
     }
 }

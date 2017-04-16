@@ -6,12 +6,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
 
 public class Gefuehl extends AppCompatActivity
 {
     ImageView imageView;
+    TextView entry;
     TextView inputHeadline;
     Button save;
     Button home;
@@ -27,6 +31,17 @@ public class Gefuehl extends AppCompatActivity
 
         final String emotion = extras.getString("Emotion");
         final int imageRes = extras.getInt("image");
+        final String key = extras.getString("key");
+        final String month = extras.getString("month");
+        final String day = extras.getString("day");
+        final String hour = extras.getString("hour");
+        final String minute = extras.getString("minute");
+        final String year = extras.getString("year");
+
+
+        entry = (TextView) findViewById(R.id.textView6);
+        entry.setText("Eintrag vom "+day+"."+month+"."+year+" "+hour+":"+minute+" Uhr");
+
 
         inputHeadline = (TextView) findViewById(R.id.headline2);
         inputHeadline.setText(emotion);
@@ -39,8 +54,7 @@ public class Gefuehl extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Toast toast = Toast.makeText(Gefuehl.this, "Eintrag gespeichert", Toast.LENGTH_SHORT);
-                toast.show();
+                saveData(key, year, month, day, hour, minute);
                 finish();
             }
         });
@@ -51,6 +65,7 @@ public class Gefuehl extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                saveData(key, year, month, day, hour, minute);
                 Intent i = new Intent(Gefuehl.this, MainActivity.class);
                 startActivity(i);
             }
@@ -62,13 +77,43 @@ public class Gefuehl extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                saveData(key, year, month, day, hour, minute);
                 Intent i = new Intent(Gefuehl.this, Ausloeser.class);
                 i.putExtra("Emotion", emotion);
                 i.putExtra("image", imageRes);
+                i.putExtra("key",key);
+                i.putExtra("month",month);
+                i.putExtra("day",day);
+                i.putExtra("hour",hour);
+                i.putExtra("minute",minute);
+                i.putExtra("year",year);
 
                 startActivity(i);
             }
         });
+    }
+
+    private void saveData(String key, String year, String month, String day, String hour, String minute)
+    {
+        DatabaseReference myRef = MainActivity.getReference();
+
+        float value;
+
+        RatingBar ratingBar = (RatingBar) findViewById(R.id.ratingBar20);
+        value = ratingBar.getRating();
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Mimik_Gestik").setValue(value);
+
+        RatingBar ratingBar1 = (RatingBar) findViewById(R.id.ratingBar21);
+        value = ratingBar1.getRating();
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Verbale_Äußerung").setValue(value);
+
+        RatingBar ratingBar2 = (RatingBar) findViewById(R.id.ratingBar22);
+        value = ratingBar2.getRating();
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Verhaltensimpuls_nachgebend").setValue(value);
+
+        Toast toast = Toast.makeText(Gefuehl.this, "Eintrag gespeichert", Toast.LENGTH_SHORT);
+        toast.show();
+
     }
 
 }
