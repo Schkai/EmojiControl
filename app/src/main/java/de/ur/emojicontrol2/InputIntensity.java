@@ -12,6 +12,7 @@ import android.widget.Toast;
 public class InputIntensity extends AppCompatActivity
 {
 
+    TextView entry;
     ImageView imageView;
     TextView inputHeadline;
     Button save;
@@ -30,6 +31,15 @@ public class InputIntensity extends AppCompatActivity
         final int imageRes = extras.getInt("image");
         final String emo = extras.getString("emo");
         final String key = extras.getString("key");
+
+        final int month = extras.getInt("month");
+        final int day = extras.getInt("day");
+        final int hour = extras.getInt("hour");
+        final int minute = extras.getInt("minute");
+
+
+        entry = (TextView) findViewById(R.id.textView4);
+        entry.setText("Eintrag vom "+day+"."+month+" "+hour+":"+minute+" Uhr");
 
 
         inputHeadline = (TextView) findViewById(R.id.headline0);

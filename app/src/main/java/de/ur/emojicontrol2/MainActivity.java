@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("month",month);
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
-                i.putExtra("month",minute);
+                i.putExtra("minute",minute);
 
                 startActivity(i);
             }
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("month",month);
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
-                i.putExtra("month",minute);
+                i.putExtra("minute",minute);
 
                 startActivity(i);
             }
@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("month",month);
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
-                i.putExtra("month",minute);
+                i.putExtra("minute",minute);
 
                 startActivity(i);
             }
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("month",month);
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
-                i.putExtra("month",minute);
+                i.putExtra("minute",minute);
 
                 startActivity(i);
             }
@@ -185,7 +185,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("month",month);
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
-                i.putExtra("month",minute);
+                i.putExtra("minute",minute);
 
                 startActivity(i);
             }
@@ -206,7 +206,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("month",month);
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
-                i.putExtra("month",minute);
+                i.putExtra("minute",minute);
 
                 startActivity(i);
             }
@@ -227,7 +227,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("month",month);
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
-                i.putExtra("month",minute);
+                i.putExtra("minute",minute);
 
                 startActivity(i);
             }
@@ -248,7 +248,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("month",month);
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
-                i.putExtra("month",minute);
+                i.putExtra("minute",minute);
 
                 startActivity(i);
             }
@@ -269,7 +269,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("month",month);
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
-                i.putExtra("month",minute);
+                i.putExtra("minute",minute);
 
                 startActivity(i);
             }
@@ -290,7 +290,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("month",month);
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
-                i.putExtra("month",minute);
+                i.putExtra("minute",minute);
 
                 startActivity(i);
             }
@@ -313,7 +313,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("month",month);
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
-                i.putExtra("month",minute);
+                i.putExtra("minute",minute);
 
                 startActivity(i);
             }
@@ -334,7 +334,7 @@ public class MainActivity extends AppCompatActivity
                 i.putExtra("month",month);
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
-                i.putExtra("month",minute);
+                i.putExtra("minute",minute);
 
                 startActivity(i);
             }
