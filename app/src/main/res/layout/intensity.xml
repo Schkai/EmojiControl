@@ -17,6 +17,15 @@
     android:nestedScrollingEnabled="true">
 
     <TextView
+        android:id="@+id/date0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="TextView"/>
+
+    <TextView
         android:id="@+id/headline0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,53 +36,43 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="20dp"
         android:typeface="sans"
-        android:layout_below="@+id/textView4"
+        android:layout_below="@+id/date0"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
 
-    <ImageView
+    <TextView
+        android:id="@+id/low0"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/emoji0"
-        android:layout_below="@+id/headline0"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/angst"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/question0"
-        android:typeface="sans"
-        android:textSize="20dp"
-        android:textAlignment="center"
-        android:text="Wie intensiv ist dieses Gefühl?"
-        android:padding="10dp"
-        android:layout_below="@+id/emoji0"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/emoji0"
-        android:padding="10dp"
-        android:text="Wie intensiv ist dieses Gefühl?"
+        android:layout_below="@+id/question0"
+        android:text="Gar nicht\nintensiv"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="20dp"
+        android:textSize="12dp"
         android:typeface="sans"/>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/high0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/question0"
+        android:text="Extrem\nintensiv"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="12dp"
+        android:typeface="sans"/>
+
+    <TextView
+        android:id="@+id/question0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/emoji0"
+        android:layout_below="@+id/headline0"
         android:padding="10dp"
         android:text="Wie intensiv ist dieses Gefühl?"
         android:textAlignment="center"
@@ -88,32 +87,6 @@
         android:numStars="5"
         android:layout_below="@+id/high0"
         android:layout_centerHorizontal="true"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/low0"
-        android:typeface="sans"
-        android:textSize="12dp"
-        android:textAlignment="center"
-        android:text="Gar nicht\nintensiv"
-        android:layout_below="@+id/question0"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/high0"
-        android:typeface="sans"
-        android:textSize="12dp"
-        android:textAlignment="center"
-        android:text="Extrem\nintensiv"
-        android:layout_below="@+id/question0"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -143,15 +116,6 @@
         android:layout_below="@+id/save0"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:text="TextView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
 
 </RelativeLayout>
 </ScrollView>

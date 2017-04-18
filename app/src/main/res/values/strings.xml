@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">EmojiControl</string>
+    <string name="locus">Verantwortlichkeit für den Auslöser der Emotion (innen - außen)</string>
 </resources>

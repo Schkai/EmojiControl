@@ -1,21 +1,20 @@
 package de.ur.emojicontrol2;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RatingBar;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Intent;
 
 import com.google.firebase.database.DatabaseReference;
 
-public class Gefuehl extends AppCompatActivity
+public class UmgangPos extends AppCompatActivity
 {
-    //ImageView imageView;
-    TextView entry;
     TextView inputHeadline;
+    TextView entry;
     Button save;
     Button home;
     Button next;
@@ -24,42 +23,39 @@ public class Gefuehl extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gefuehl);
+        setContentView(R.layout.activity_umgang);
 
         Bundle extras = getIntent().getExtras();
 
         final String emotion = extras.getString("Emotion");
-        //final int imageRes = extras.getInt("image");
         final String key = extras.getString("key");
         final String month = extras.getString("month");
         final String day = extras.getString("day");
         final String hour = extras.getString("hour");
         final String minute = extras.getString("minute");
         final String year = extras.getString("year");
-        final String posNeg = extras.getString("posNeg");
 
-        TextView tv1 = (TextView) findViewById(R.id.question2);
+        TextView tv1 = (TextView) findViewById(R.id.question40);
         tv1.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(Gefuehl.this, Glossar.class);
+                Intent i = new Intent(UmgangPos.this, Glossar.class);
                 startActivity(i);
             }
         });
 
 
-        entry = (TextView) findViewById(R.id.date2);
+        entry = (TextView) findViewById(R.id.date4p);
         entry.setText("Eintrag vom "+day+"."+month+"."+year+" "+hour+":"+minute+" Uhr");
 
 
-        inputHeadline = (TextView) findViewById(R.id.headline2);
+        inputHeadline = (TextView) findViewById(R.id.headline4b);
         inputHeadline.setText(emotion);
 
-        //imageView = (ImageView) findViewById(R.id.emoji2);
-        //imageView.setImageDrawable(getResources().getDrawable(imageRes));
-        save = (Button) findViewById(R.id.back2);
+
+        save = (Button) findViewById(R.id.back4);
         save.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -70,35 +66,26 @@ public class Gefuehl extends AppCompatActivity
             }
         });
 
-        home = (Button) findViewById(R.id.home2);
+        home = (Button) findViewById(R.id.start4);
         home.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 saveData(key, year, month, day, hour, minute);
-                Intent i = new Intent(Gefuehl.this, MainActivity.class);
+                Intent i = new Intent(UmgangPos.this, MainActivity.class);
                 startActivity(i);
             }
         });
 
-        next = (Button) findViewById(R.id.next2);
+        next = (Button) findViewById(R.id.button5);
         next.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 saveData(key, year, month, day, hour, minute);
-                Intent i = new Intent(Gefuehl.this, Ausloeser.class);
-                i.putExtra("Emotion", emotion);
-                // i.putExtra("image", imageRes);
-                i.putExtra("key",key);
-                i.putExtra("month",month);
-                i.putExtra("day",day);
-                i.putExtra("hour",hour);
-                i.putExtra("minute",minute);
-                i.putExtra("year",year);
-                i.putExtra("posNeg", posNeg);
+                Intent i = new Intent(UmgangPos.this, MainActivity.class);
 
                 startActivity(i);
             }
@@ -109,23 +96,28 @@ public class Gefuehl extends AppCompatActivity
     {
         DatabaseReference myRef = MainActivity.getReference();
 
-        float value;
+        boolean b;
 
-        RatingBar ratingBar = (RatingBar) findViewById(R.id.ratingBar20);
-        value = ratingBar.getRating();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Mimik_Gestik").setValue(value);
+        RadioButton rb1 = (RadioButton) findViewById(R.id.radioButton4);
+        b = rb1.isChecked();
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Gefühl_genossen").setValue(b);
 
-        RatingBar ratingBar1 = (RatingBar) findViewById(R.id.ratingBar21);
-        value = ratingBar1.getRating();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Verbale_Äußerung").setValue(value);
 
-        RatingBar ratingBar2 = (RatingBar) findViewById(R.id.ratingBar22);
-        value = ratingBar2.getRating();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Verhaltensimpuls_nachgebend").setValue(value);
+        RadioButton rb2 = (RadioButton) findViewById(R.id.radioButton5);
+        b = rb2.isChecked();
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Ereignisse_vorgestellt").setValue(b);
 
-        Toast toast = Toast.makeText(Gefuehl.this, "Eintrag gespeichert", Toast.LENGTH_SHORT);
+
+        RadioButton rb3 = (RadioButton) findViewById(R.id.radioButton6);
+        b = rb3.isChecked();
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Gefühl_nicht_fortbestehen").setValue(b);
+
+        RadioButton rb4 = (RadioButton) findViewById(R.id.radioButton14);
+        b = rb4.isChecked();
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Situation_verbessern").setValue(b);
+
+        Toast toast = Toast.makeText(UmgangPos.this, "Eintrag gespeichert", Toast.LENGTH_SHORT);
         toast.show();
 
     }
-
 }

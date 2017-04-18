@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity
     String year, month, day, hour, minute;
     FirebaseDatabase database;
     static DatabaseReference myRef;
+    TextView entry;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,9 +33,12 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         database = FirebaseDatabase.getInstance();
+
         myRef = database.getReference();
 
         updateDate();
+        entry = (TextView) findViewById(R.id.textViewMain) ;
+        entry.setText("Eintrag vom "+day+"."+month+"."+year+" "+hour+":"+minute+" Uhr");
 
         setupEmojiButtons();
 
@@ -44,6 +49,7 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 Intent i = new Intent(MainActivity.this, Bearbeiten.class);
+                i.putExtra("key",getKey());
                 startActivity(i);
 
             }
@@ -52,12 +58,37 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+
+
     @Override
     protected void onResume()
     {
         super.onResume();
-        updateDate();
+
+
+        Bundle extras = getIntent().getExtras();
+
+        if (extras==null)
+        {
+            updateDate();
+            entry.setText("Eintrag vom "+day+"."+month+"."+year+" "+hour+":"+minute+" Uhr");
+        }
+
+
+        else
+        {
+            final String date = extras.getString("date");
+            final String time = extras.getString("time");
+            year= date.substring(0,4);
+            month=date.substring(4,6);
+            day=date.substring(6,8);
+            hour=time.substring(0,2);
+            minute=time.substring(2,4);
+            entry.setText("Eintrag vom "+day+"."+month+"."+year+" "+hour+":"+minute+" Uhr");
+        }
+
     }
+
 
     private void updateDate()
     {
@@ -115,10 +146,11 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
-                i.putExtra("Emotion", "Du hast Angst");
-                i.putExtra("image",R.drawable.angst);
+                i.putExtra("Emotion", "Du hast angegeben, dass du Angst hast");
+                //i.putExtra("image",R.drawable.angst);
                 i.putExtra("emo", "Angst");
                 i.putExtra("key",getKey());
+                i.putExtra("posNeg", "negativ");
 
                 i.putExtra("month",month);
                 i.putExtra("day",day);
@@ -137,10 +169,11 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
-                i.putExtra("Emotion", "Du bist begeistert");
-                i.putExtra("image",R.drawable.begeistert);
+                i.putExtra("Emotion", "Du hast angegeben, dass du begeistert bist");
+                //i.putExtra("image",R.drawable.begeistert);
                 i.putExtra("emo", "Begeisterung");
                 i.putExtra("key",getKey());
+                i.putExtra("posNeg", "positiv");
 
                 i.putExtra("month",month);
                 i.putExtra("day",day);
@@ -159,10 +192,11 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
-                i.putExtra("Emotion", "Du bist dankbar");
-                i.putExtra("image",R.drawable.dankbar);
+                i.putExtra("Emotion", "Du hast angegeben, dass du dankbar bist");
+                //i.putExtra("image",R.drawable.dankbar);
                 i.putExtra("emo", "Dankbarkeit");
                 i.putExtra("key",getKey());
+                i.putExtra("posNeg", "positiv");
 
                 i.putExtra("month",month);
                 i.putExtra("day",day);
@@ -182,10 +216,11 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
-                i.putExtra("Emotion", "Du freust Dich");
-                i.putExtra("image",R.drawable.freude);
+                i.putExtra("Emotion", "Du hast angegeben, dass du dich freust");
+                //i.putExtra("image",R.drawable.freude);
                 i.putExtra("emo", "Freude");
                 i.putExtra("key",getKey());
+                i.putExtra("posNeg", "positiv");
 
                 i.putExtra("month",month);
                 i.putExtra("day",day);
@@ -204,10 +239,11 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
-                i.putExtra("Emotion", "Du bist voller Hoffnung");
-                i.putExtra("image",R.drawable.hoffnungsvoll);
+                i.putExtra("Emotion", "Du hast angegeben, dass du hoffnungsvoll bist");
+                //i.putExtra("image",R.drawable.hoffnungsvoll);
                 i.putExtra("emo", "Hoffnung");
                 i.putExtra("key",getKey());
+                i.putExtra("posNeg", "positiv");
 
                 i.putExtra("month",month);
                 i.putExtra("day",day);
@@ -226,10 +262,11 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
-                i.putExtra("Emotion", "Du langweilst Dich");
-                i.putExtra("image",R.drawable.langeweile);
+                i.putExtra("Emotion", "Du hast angegeben, dass du dich langweilst");
+                //i.putExtra("image",R.drawable.langeweile);
                 i.putExtra("emo", "Langeweile");
                 i.putExtra("key",getKey());
+                i.putExtra("posNeg", "negativ");
 
                 i.putExtra("month",month);
                 i.putExtra("day",day);
@@ -248,10 +285,11 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
-                i.putExtra("Emotion", "Du schämst Dich");
-                i.putExtra("image",R.drawable.scham);
+                i.putExtra("Emotion", "Du hast angegeben, dass du dich schämst");
+                //i.putExtra("image",R.drawable.scham);
                 i.putExtra("emo", "Scham");
                 i.putExtra("key",getKey());
+                i.putExtra("posNeg", "negativ");
 
                 i.putExtra("month",month);
                 i.putExtra("day",day);
@@ -270,10 +308,11 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
-                i.putExtra("Emotion", "Du fühlst Dich schuldig");
-                i.putExtra("image",R.drawable.schuld);
+                i.putExtra("Emotion", "Du hast angegeben, dass du dich schuldig fühlst");
+                //i.putExtra("image",R.drawable.schuld);
                 i.putExtra("emo", "Schuld");
                 i.putExtra("key",getKey());
+                i.putExtra("posNeg", "negativ");
 
                 i.putExtra("month",month);
                 i.putExtra("day",day);
@@ -292,10 +331,11 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
-                i.putExtra("Emotion", "Du bist stolz");
-                i.putExtra("image",R.drawable.stolz);
+                i.putExtra("Emotion", "Du hast angegeben, dass du stolz bist");
+                //i.putExtra("image",R.drawable.stolz);
                 i.putExtra("emo", "Stolz");
                 i.putExtra("key",getKey());
+                i.putExtra("posNeg", "positiv");
 
                 i.putExtra("month",month);
                 i.putExtra("day",day);
@@ -314,10 +354,11 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
-                i.putExtra("Emotion", "Du bist traurig");
-                i.putExtra("image",R.drawable.trauer);
+                i.putExtra("Emotion", "Du hast angegeben, dass du traurig bist");
+                //i.putExtra("image",R.drawable.trauer);
                 i.putExtra("emo", "Trauer");
                 i.putExtra("key",getKey());
+                i.putExtra("posNeg", "negativ");
 
                 i.putExtra("month",month);
                 i.putExtra("day",day);
@@ -338,10 +379,11 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
-                i.putExtra("Emotion", "Du bist wütend");
-                i.putExtra("image",R.drawable.wut);
+                i.putExtra("Emotion", "Du hast angegeben, dass du wütend bist");
+                //i.putExtra("image",R.drawable.wut);
                 i.putExtra("emo", "Wut");
                 i.putExtra("key",getKey());
+                i.putExtra("posNeg", "negativ");
 
                 i.putExtra("month",month);
                 i.putExtra("day",day);
@@ -360,10 +402,11 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 Intent i = new Intent(MainActivity.this, InputIntensity.class);
-                i.putExtra("Emotion", "Du bist zufrieden");
-                i.putExtra("image",R.drawable.zufrieden);
+                i.putExtra("Emotion", "Du hast angegeben, dass du zufrieden bist");
+                //i.putExtra("image",R.drawable.zufrieden);
                 i.putExtra("emo", "Zufriedenheit");
                 i.putExtra("key",getKey());
+                i.putExtra("posNeg", "positiv");
 
                 i.putExtra("month",month);
                 i.putExtra("day",day);

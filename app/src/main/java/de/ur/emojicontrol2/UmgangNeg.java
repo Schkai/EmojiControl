@@ -1,21 +1,18 @@
 package de.ur.emojicontrol2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.RadioButton;
-import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.content.Intent;
 
 import com.google.firebase.database.DatabaseReference;
 
-public class Umgang extends AppCompatActivity
+public class UmgangNeg extends AppCompatActivity
 {
-    ImageView imageView;
     TextView inputHeadline;
     TextView entry;
     Button save;
@@ -26,12 +23,11 @@ public class Umgang extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_umgang);
+        setContentView(R.layout.activity_umgang_neg);
 
         Bundle extras = getIntent().getExtras();
 
         final String emotion = extras.getString("Emotion");
-        final int imageRes = extras.getInt("image");
         final String key = extras.getString("key");
         final String month = extras.getString("month");
         final String day = extras.getString("day");
@@ -39,18 +35,27 @@ public class Umgang extends AppCompatActivity
         final String minute = extras.getString("minute");
         final String year = extras.getString("year");
 
+        TextView tv1 = (TextView) findViewById(R.id.textView17n);
+        tv1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent i = new Intent(UmgangNeg.this, Glossar.class);
+                startActivity(i);
+            }
+        });
 
-        entry = (TextView) findViewById(R.id.textView7);
+
+        entry = (TextView) findViewById(R.id.textView7n);
         entry.setText("Eintrag vom "+day+"."+month+"."+year+" "+hour+":"+minute+" Uhr");
 
 
-        inputHeadline = (TextView) findViewById(R.id.headline4);
+        inputHeadline = (TextView) findViewById(R.id.headline4n);
         inputHeadline.setText(emotion);
 
-        imageView = (ImageView) findViewById(R.id.emoji4);
-        imageView.setImageDrawable(getResources().getDrawable(imageRes));
 
-        save = (Button) findViewById(R.id.back4);
+        save = (Button) findViewById(R.id.back4n);
         save.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -61,26 +66,26 @@ public class Umgang extends AppCompatActivity
             }
         });
 
-        home = (Button) findViewById(R.id.start4);
+        home = (Button) findViewById(R.id.start4n);
         home.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 saveData(key, year, month, day, hour, minute);
-                Intent i = new Intent(Umgang.this, MainActivity.class);
+                Intent i = new Intent(UmgangNeg.this, MainActivity.class);
                 startActivity(i);
             }
         });
 
-        next = (Button) findViewById(R.id.button5);
+        next = (Button) findViewById(R.id.button5n);
         next.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 saveData(key, year, month, day, hour, minute);
-                Intent i = new Intent(Umgang.this, MainActivity.class);
+                Intent i = new Intent(UmgangNeg.this, MainActivity.class);
 
                 startActivity(i);
             }
@@ -92,24 +97,6 @@ public class Umgang extends AppCompatActivity
         DatabaseReference myRef = MainActivity.getReference();
 
         boolean b;
-
-        RadioButton rb1 = (RadioButton) findViewById(R.id.radioButton4);
-        b = rb1.isChecked();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Gefühl_genossen").setValue(b);
-
-
-        RadioButton rb2 = (RadioButton) findViewById(R.id.radioButton5);
-        b = rb2.isChecked();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Ereignisse_vorgestellt").setValue(b);
-
-
-        RadioButton rb3 = (RadioButton) findViewById(R.id.radioButton6);
-        b = rb3.isChecked();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Gefühl_nicht_fortbestehen").setValue(b);
-
-        RadioButton rb4 = (RadioButton) findViewById(R.id.radioButton14);
-        b = rb4.isChecked();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Situation_verbessern").setValue(b);
 
         RadioButton rb5 = (RadioButton) findViewById(R.id.radioButton7);
         b = rb5.isChecked();
@@ -139,7 +126,7 @@ public class Umgang extends AppCompatActivity
         b = rb11.isChecked();
         myRef.child(key).child(year+month+day).child(hour+minute).child("Resigniert_abgewartet").setValue(b);
 
-        Toast toast = Toast.makeText(Umgang.this, "Eintrag gespeichert", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(UmgangNeg.this, "Eintrag gespeichert", Toast.LENGTH_SHORT);
         toast.show();
 
     }

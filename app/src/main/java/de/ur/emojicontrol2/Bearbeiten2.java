@@ -16,28 +16,27 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Bearbeiten extends AppCompatActivity
+public class Bearbeiten2 extends AppCompatActivity
 {
-
-    ArrayList<String> days;
+    ArrayList<String> entries;
     ArrayAdapter aa;
-    TextView number;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bearbeiten);
+        setContentView(R.layout.activity_bearbeiten2);
 
         Bundle extras = getIntent().getExtras();
         final String key = extras.getString("key");
+        final String date = extras.getString("date");
 
         DatabaseReference myRef = MainActivity.getReference();
-        number = (TextView) findViewById(R.id.textView9);
-        ListView listView = (ListView) findViewById(R.id.listView) ;
 
-        days = new ArrayList<>();
-        aa = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, days);
+        ListView listView = (ListView) findViewById(R.id.listView2) ;
+
+        entries = new ArrayList<>();
+        aa = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, entries);
         listView.setAdapter(aa);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
@@ -45,12 +44,14 @@ public class Bearbeiten extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
-                String date = days.get(position);
+                String time = entries.get(position);
 
-                Intent i = new Intent(Bearbeiten.this, Bearbeiten2.class);
-                i.putExtra("key",key);
+                Intent i = new Intent(Bearbeiten2.this, MainActivity.class);
+
                 i.putExtra("date",date);
+                i.putExtra("time",time);
                 startActivity(i);
+
             }
         });
 
@@ -61,12 +62,13 @@ public class Bearbeiten extends AppCompatActivity
             public void onDataChange(DataSnapshot dataSnapshot)
             {
 
-                for (DataSnapshot child : dataSnapshot.child(key).getChildren())
+                for (DataSnapshot child : dataSnapshot.child(key).child(date).getChildren())
                 {
                     String s = child.getKey().toString();
-                    days.add(s);
+                    entries.add(s);
                 }
                 aa.notifyDataSetChanged();
+
 
             }
 
@@ -80,8 +82,10 @@ public class Bearbeiten extends AppCompatActivity
 
     }
 
-    private String getFormattedDate(String date)
+    private String getFormattedTime(String time)
     {
-        return date.substring(6,8)+"."+date.substring(4,6)+"."+date.substring(0,4);
+        return time.substring(0,2)+":"+time.substring(2,4);
     }
 }
+
+

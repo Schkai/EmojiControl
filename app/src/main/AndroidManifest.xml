@@ -23,9 +23,15 @@
         </activity>
         <activity android:name=".Ausloeser">
         </activity>
-        <activity android:name=".Umgang">
+        <activity android:name=".UmgangPos">
         </activity>
         <activity android:name=".Bearbeiten">
+        </activity>
+        <activity android:name=".Bearbeiten2">
+        </activity>
+        <activity android:name=".UmgangNeg">
+        </activity>
+        <activity android:name=".Glossar">
         </activity>
     </application>
 

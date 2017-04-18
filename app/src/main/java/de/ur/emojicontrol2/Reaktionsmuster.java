@@ -5,18 +5,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class Reaktionsmuster extends AppCompatActivity
 {
 
-    ImageView imageView;
+    //ImageView imageView;
     TextView inputHeadline;
     TextView entry;
     Button save;
@@ -32,7 +30,8 @@ public class Reaktionsmuster extends AppCompatActivity
         Bundle extras = getIntent().getExtras();
 
         final String emotion = extras.getString("Emotion");
-        final int imageRes = extras.getInt("image");
+        //final int imageRes = extras.getInt("image");
+        final String posNeg = extras.getString("posNeg");
         final String key = extras.getString("key");
         final String month = extras.getString("month");
         final String day = extras.getString("day");
@@ -41,15 +40,26 @@ public class Reaktionsmuster extends AppCompatActivity
         final String year = extras.getString("year");
 
 
-        entry = (TextView) findViewById(R.id.textView3);
+        entry = (TextView) findViewById(R.id.date1);
         entry.setText("Eintrag vom "+day+"."+month+"."+year+" "+hour+":"+minute+" Uhr");
 
 
         inputHeadline = (TextView) findViewById(R.id.headline1);
         inputHeadline.setText(emotion);
 
-        imageView = (ImageView) findViewById(R.id.emoji1);
-        imageView.setImageDrawable(getResources().getDrawable(imageRes));
+        TextView tv1 = (TextView) findViewById(R.id.question1);
+        tv1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent i = new Intent(Reaktionsmuster.this, Glossar.class);
+                startActivity(i);
+            }
+        });
+
+        //imageView = (ImageView) findViewById(R.id.emoji1);
+        //imageView.setImageDrawable(getResources().getDrawable(imageRes));
 
         save = (Button) findViewById(R.id.back1);
         save.setOnClickListener(new View.OnClickListener()
@@ -70,6 +80,7 @@ public class Reaktionsmuster extends AppCompatActivity
             {
                 saveData(key, year, month, day, hour, minute);
                 Intent i = new Intent(Reaktionsmuster.this, MainActivity.class);
+                home.setText("hallo");
                 startActivity(i);
             }
         });
@@ -84,13 +95,14 @@ public class Reaktionsmuster extends AppCompatActivity
 
                 Intent i = new Intent(Reaktionsmuster.this, Gefuehl.class);
                 i.putExtra("Emotion", emotion);
-                i.putExtra("image", imageRes);
+                //i.putExtra("image", imageRes);
                 i.putExtra("key",key);
                 i.putExtra("month",month);
                 i.putExtra("day",day);
                 i.putExtra("hour",hour);
                 i.putExtra("minute",minute);
                 i.putExtra("year",year);
+                i.putExtra("posNeg", posNeg);
 
                 startActivity(i);
             }

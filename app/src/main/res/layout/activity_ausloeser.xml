@@ -24,32 +24,24 @@
         android:hint="Hier steht die Emotion"
         android:padding="20dp"
         android:background="@color/accent_material_dark"
-        android:layout_below="@+id/textView5"
+        android:layout_below="@+id/date3"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/emoji3"
-        android:layout_below="@+id/headline3"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/angst"/>
-
     <TextView
+        android:id="@+id/question3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/question3"
-        android:typeface="sans"
-        android:textSize="20dp"
-        android:textAlignment="center"
-        android:text="Jetzt geht es um den Auslöser des Gefühls. Der Auslöser war:"
-        android:layout_below="@+id/emoji3"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/headline3"
         android:paddingBottom="20dp"
-        android:paddingTop="20dp"/>
+        android:paddingTop="20dp"
+        android:text="Jetzt geht es um den Auslöser des Gefühls. Der Auslöser war:"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20dp"
+        android:typeface="sans"/>
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -219,7 +211,7 @@
         android:layout_below="@+id/back3"/>
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/date3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
