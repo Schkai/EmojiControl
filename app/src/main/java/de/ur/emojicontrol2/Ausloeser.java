@@ -148,28 +148,41 @@ public class Ausloeser extends AppCompatActivity
     {
         DatabaseReference myRef = MainActivity.getReference();
 
-        float value;
-        boolean b;
+        float value=-5;
+        //boolean b;
 
         RadioButton rb1 = (RadioButton) findViewById(R.id.radioButton2);
-        b = rb1.isChecked();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Auslöser_jetzt").setValue(b);
+        if (rb1.isChecked())
+        {
+            value=5;
+        }
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Auslöser_jetzt").setValue(value);
+
+        value=-5;
 
         RadioButton rb2 = (RadioButton) findViewById(R.id.radioButton);
-        b = rb2.isChecked();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Auslöser_Vergangenheit").setValue(b);
+        if (rb2.isChecked())
+        {
+            value=5;
+        }
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Auslöser_Vergangenheit").setValue(value);
+
+        value=-5;
 
         RadioButton rb3 = (RadioButton) findViewById(R.id.radioButton3);
-        b = rb3.isChecked();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Auslöser_Zukunft").setValue(b);
+        if (rb3.isChecked())
+        {
+            value=5;
+        }
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Auslöser_Zukunft").setValue(value);
 
         RatingBar ratingBar = (RatingBar) findViewById(R.id.ratingBar4);
         value = ratingBar.getRating();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Auslöser_Selbst_Andere").setValue(value);
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Auslöser_Selbst_Andere").setValue(value*2);
 
         RatingBar ratingBar1 = (RatingBar) findViewById(R.id.ratingBar5);
         value = ratingBar1.getRating();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Auslöser_Kontrollierbarkeit").setValue(value);
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Auslöser_Kontrollierbarkeit").setValue(value*2);
 
 
         Toast toast = Toast.makeText(Ausloeser.this, "Eintrag gespeichert", Toast.LENGTH_SHORT);

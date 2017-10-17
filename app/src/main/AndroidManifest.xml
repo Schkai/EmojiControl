@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="de.ur.emojicontrol2">
+    package="de.ur.emojicontrol2">
 
     <application
         android:allowBackup="true"
@@ -10,29 +10,27 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".InputIntensity">
-        </activity>
-        <activity android:name=".Reaktionsmuster">
-        </activity>
-        <activity android:name=".Gefuehl">
-        </activity>
-        <activity android:name=".Ausloeser">
-        </activity>
-        <activity android:name=".UmgangPos">
-        </activity>
-        <activity android:name=".Bearbeiten">
-        </activity>
-        <activity android:name=".Bearbeiten2">
-        </activity>
-        <activity android:name=".UmgangNeg">
-        </activity>
-        <activity android:name=".Glossar">
-        </activity>
+        <activity android:name=".InputIntensity" />
+        <activity android:name=".Reaktionsmuster" />
+        <activity android:name=".Gefuehl" />
+        <activity android:name=".Ausloeser" />
+        <activity android:name=".UmgangPos" />
+        <activity android:name=".Bearbeiten" />
+        <activity android:name=".Bearbeiten2" />
+        <activity android:name=".UmgangNeg" />
+        <activity android:name=".Glossar" />
+        <activity android:name=".Analyse" />
+        <activity android:name=".Analyse2" />
+        <activity android:name=".Analyse3" />
+        <activity android:name=".Analyse4" />
+        <activity android:name=".Analyse5" />
+        <activity android:name=".Analyse6" />
+        <activity android:name=".Bearbeiten3"></activity>
     </application>
 
 </manifest>

@@ -96,35 +96,78 @@ public class UmgangNeg extends AppCompatActivity
     {
         DatabaseReference myRef = MainActivity.getReference();
 
-        boolean b;
+        float f = -5;
 
         RadioButton rb5 = (RadioButton) findViewById(R.id.radioButton7);
-        b = rb5.isChecked();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Situation_verlassen").setValue(b);
+        if (rb5.isChecked())
+        {
+            f=5;
+        }
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Situation_verlassen").setValue(f);
+
+        f=-5;
 
         RadioButton rb6 = (RadioButton) findViewById(R.id.radioButton8);
-        b = rb6.isChecked();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Situation_verändern").setValue(b);
+        if (rb6.isChecked())
+        {
+            f=5;
+        }
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Situation_verändern").setValue(f);
+
+        f=-5;
 
         RadioButton rb7 = (RadioButton) findViewById(R.id.radioButton9);
-        b = rb7.isChecked();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Situation_umdeuten").setValue(b);
+        if (rb7.isChecked())
+        {
+            f=5;
+        }
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Situation_umdeuten").setValue(f);
+
+        f=-5;
 
         RadioButton rb8 = (RadioButton) findViewById(R.id.radioButton10);
-        b = rb8.isChecked();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Versucht_abzulenken").setValue(b);
+        if (rb8.isChecked())
+        {
+            f=5;
+        }
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Versucht_abzulenken").setValue(f);
+
+        f=-5;
 
         RadioButton rb9 = (RadioButton) findViewById(R.id.radioButton11);
-        b = rb9.isChecked();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Substanz_konsumiert").setValue(b);
+        if (rb9.isChecked())
+        {
+            f=5;
+        }
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Substanz_konsumiert").setValue(f);
+
+        f=-5;
 
         RadioButton rb10 = (RadioButton) findViewById(R.id.radioButton12);
-        b = rb10.isChecked();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Lange_nachgegrübelt").setValue(b);
+        if (rb10.isChecked())
+        {
+            f=5;
+        }
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Lange_nachgegrübelt").setValue(f);
+
+        f=-5;
 
         RadioButton rb11 = (RadioButton) findViewById(R.id.radioButton13);
-        b = rb11.isChecked();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Resigniert_abgewartet").setValue(b);
+        if (rb11.isChecked())
+        {
+            f=5;
+        }
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Resigniert_abgewartet").setValue(f);
+
+        f=5;
+
+        RadioButton rb12 = (RadioButton) findViewById(R.id.radioButton15);
+        if (rb12.isChecked())
+        {
+            f=-5;
+        }
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Situation_verbessern").setValue(f);
+
 
         Toast toast = Toast.makeText(UmgangNeg.this, "Eintrag gespeichert", Toast.LENGTH_SHORT);
         toast.show();

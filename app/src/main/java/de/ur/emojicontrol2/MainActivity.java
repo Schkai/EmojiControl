@@ -55,11 +55,24 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        Button analyze = (Button) findViewById(R.id.analysieren);
+        analyze.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent i = new Intent(MainActivity.this, Analyse.class);
+                i.putExtra("key",getKey());
+                startActivity(i);
+
+            }
+        });
+
 
     }
 
 
-
+    /*
     @Override
     protected void onResume()
     {
@@ -88,6 +101,7 @@ public class MainActivity extends AppCompatActivity
         }
 
     }
+    */
 
 
     private void updateDate()
@@ -96,8 +110,9 @@ public class MainActivity extends AppCompatActivity
         year = ""+calendar.get(Calendar.YEAR);
         day = ""+calendar.get(Calendar.DAY_OF_MONTH);
         if (day.length()<2){day="0"+calendar.get(Calendar.DAY_OF_MONTH);}
-        month = ""+calendar.get(Calendar.MONTH);
-        if (month.length()<2){month="0"+calendar.get(Calendar.MONTH);}
+        int m = calendar.get(Calendar.MONTH) +1;
+        month = ""+m;
+        if (month.length()<2){month="0"+m;}
         hour = ""+calendar.get(Calendar.HOUR_OF_DAY);
         if (hour.length()<2){hour="0"+calendar.get(Calendar.HOUR_OF_DAY);}
         minute = ""+calendar.get(Calendar.MINUTE);

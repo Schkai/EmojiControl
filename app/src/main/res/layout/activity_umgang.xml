@@ -70,52 +70,40 @@
         android:checked="false"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
-        android:text="Ich habe meine Aufmerksamkeit auf das Gefühl gerichtet und es genossen"/>
+        android:text="Ich habe meine Aufmerksamkeit auf das Gefühl gerichtet und es genossen."/>
 
     <RadioButton
+        android:id="@+id/radioButton5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ich habe mir weitere positive Ereignisse vorgestellt"
-        android:id="@+id/radioButton5"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/radioButton4"
         android:checked="false"
+        android:paddingBottom="10dp"
         android:paddingTop="10dp"
-        android:paddingBottom="10dp"/>
+        android:text="Ich habe mir weitere positive Ereignisse vorgestellt."/>
 
     <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mir ist der Gedanke gekommen, dass das Gefühl nicht forbestehen wird"
         android:id="@+id/radioButton6"
-        android:layout_below="@+id/radioButton5"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:checked="false"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"/>
-
-    <RadioButton
-        android:id="@+id/radioButton14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/radioButton6"
+        android:layout_below="@+id/radioButton5"
         android:checked="false"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
-        android:text="Ich habe mir überlegt, wie ich die Situation verbessern könnte"/>
+        android:text="Mir ist der Gedanke gekommen, dass das Gefühl nicht forbestehen wird."/>
 
     <Button
+        android:id="@+id/start4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Zurück zur Startseite"
-        android:id="@+id/start4"
+        android:layout_alignParentEnd="false"
         android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/high12"
-        android:layout_below="@+id/back4"/>
+        android:layout_below="@+id/back4"
+        android:text="Zurück zur Startseite" />
 
     <Button
         android:id="@+id/back4"
@@ -123,7 +111,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/radioButton14"
+        android:layout_below="@+id/radioButton6"
         android:text="Eintrag speichern\nund zurück"
         android:textSize="12dp"/>
 
@@ -133,7 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/radioButton14"
+        android:layout_below="@+id/radioButton6"
         android:text="FERTIG"
         android:textSize="12dp"/>
 

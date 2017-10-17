@@ -15,6 +15,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Bearbeiten2 extends AppCompatActivity
 {
@@ -46,8 +47,8 @@ public class Bearbeiten2 extends AppCompatActivity
             {
                 String time = entries.get(position);
 
-                Intent i = new Intent(Bearbeiten2.this, MainActivity.class);
-
+                Intent i = new Intent(Bearbeiten2.this, Bearbeiten3.class);
+                i.putExtra("key",key);
                 i.putExtra("date",date);
                 i.putExtra("time",time);
                 startActivity(i);

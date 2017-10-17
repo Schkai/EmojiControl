@@ -96,25 +96,36 @@ public class UmgangPos extends AppCompatActivity
     {
         DatabaseReference myRef = MainActivity.getReference();
 
-        boolean b;
+       float f=-5;
 
         RadioButton rb1 = (RadioButton) findViewById(R.id.radioButton4);
-        b = rb1.isChecked();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Gefühl_genossen").setValue(b);
+        if (rb1.isChecked())
+        {
+            f=5;
+        }
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Gefühl_genossen").setValue(f);
 
+        f=-5;
 
         RadioButton rb2 = (RadioButton) findViewById(R.id.radioButton5);
-        b = rb2.isChecked();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Ereignisse_vorgestellt").setValue(b);
+        if (rb2.isChecked())
+        {
+            f=5;
+        }
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Ereignisse_vorgestellt").setValue(f);
+
+        f=-5;
 
 
         RadioButton rb3 = (RadioButton) findViewById(R.id.radioButton6);
-        b = rb3.isChecked();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Gefühl_nicht_fortbestehen").setValue(b);
+        if (rb3.isChecked())
+        {
+            f=5;
+        }
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Gefühl_nicht_fortbestehen").setValue(f);
 
-        RadioButton rb4 = (RadioButton) findViewById(R.id.radioButton14);
-        b = rb4.isChecked();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Situation_verbessern").setValue(b);
+
+
 
         Toast toast = Toast.makeText(UmgangPos.this, "Eintrag gespeichert", Toast.LENGTH_SHORT);
         toast.show();

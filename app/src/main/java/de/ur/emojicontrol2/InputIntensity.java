@@ -27,11 +27,16 @@ public class InputIntensity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.intensity);
 
+        Toast toast = Toast.makeText(InputIntensity.this, "Null Sterne bedeutet immer: Keine Eingabe", Toast.LENGTH_LONG);
+        toast.show();
+
         Bundle extras = getIntent().getExtras();
 
-        final String emotion = extras.getString("Emotion");
-        //final int imageRes = extras.getInt("image");
-        final String emo = extras.getString("emo");
+
+
+        final String emotion = extras.getString("Emotion"); //Die Aussage als Satz
+
+        final String emo = extras.getString("emo"); //Emotion in einem Wort
         final String key = extras.getString("key");
         final String posNeg = extras.getString("posNeg");
 
@@ -47,10 +52,8 @@ public class InputIntensity extends AppCompatActivity
 
 
         inputHeadline = (TextView) findViewById(R.id.headline0);
-        inputHeadline.setText(emotion);
+        inputHeadline.setText(emotion); //"Du fühlst dich.."
 
-        //imageView = (ImageView) findViewById(R.id.emoji0);
-        //imageView.setImageDrawable(getResources().getDrawable(imageRes));
 
         save = (Button) findViewById(R.id.save0);
         save.setOnClickListener(new View.OnClickListener()
@@ -110,7 +113,7 @@ public class InputIntensity extends AppCompatActivity
 
         RatingBar ratingBar = (RatingBar) findViewById(R.id.ratingBar0);
         float intensity = ratingBar.getRating();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Intensity").setValue(intensity);
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Intensity").setValue(intensity*2);
 
         Toast toast = Toast.makeText(InputIntensity.this, "Eintrag gespeichert", Toast.LENGTH_SHORT);
         toast.show();

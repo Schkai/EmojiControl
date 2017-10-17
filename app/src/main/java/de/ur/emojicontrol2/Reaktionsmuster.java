@@ -80,7 +80,6 @@ public class Reaktionsmuster extends AppCompatActivity
             {
                 saveData(key, year, month, day, hour, minute);
                 Intent i = new Intent(Reaktionsmuster.this, MainActivity.class);
-                home.setText("hallo");
                 startActivity(i);
             }
         });
@@ -117,15 +116,15 @@ public class Reaktionsmuster extends AppCompatActivity
 
         RatingBar ratingBar = (RatingBar) findViewById(R.id.ratingBar10);
         value = ratingBar.getRating();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Anspannung").setValue(value);
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Anspannung").setValue(value*2);
 
         RatingBar ratingBar1 = (RatingBar) findViewById(R.id.ratingBar11);
         value = ratingBar1.getRating();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Tendenz").setValue(value);
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Tendenz").setValue(value*2);
 
         RatingBar ratingBar2 = (RatingBar) findViewById(R.id.ratingBar12);
         value = ratingBar2.getRating();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Aufmerksamkeit").setValue(value);
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Aufmerksamkeit").setValue(value*2);
 
         Toast toast = Toast.makeText(Reaktionsmuster.this, "Eintrag gespeichert", Toast.LENGTH_SHORT);
         toast.show();

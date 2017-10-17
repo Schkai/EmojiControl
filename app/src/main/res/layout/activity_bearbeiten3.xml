@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="de.ur.emojicontrol2.Bearbeiten3"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <TextView
+        android:id="@+id/bearbeiten3_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Du kannst jetzt den ausgewählten Eintrag noch einmal bearbeiten"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="2dp" />
+
+    <Button
+        android:id="@+id/bearbeiten3_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zurück"
+        android:layout_below="@+id/bearbeiten3_info"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="50dp" />
+
+    <Button
+        android:id="@+id/bearbeiten3_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK, weiter"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/bearbeiten3_info"
+        tools:layout_editor_absoluteX="294dp"
+        tools:layout_editor_absoluteY="50dp" />
+
+    <Button
+        android:id="@+id/bearbeiten3_home"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:text="ZURÜCK ZUR STARTSEITE"
+        android:layout_below="@+id/bearbeiten3_back"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="98dp" />
+</RelativeLayout>

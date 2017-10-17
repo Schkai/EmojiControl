@@ -36,11 +36,11 @@
         android:layout_below="@+id/headline2"
         android:padding="10dp"
         android:paddingBottom="20dp"
-        android:text="Bitte schätze ein, inwiefern Du dieses Gefühl ausgedrückt hast:"
+        android:text="Bitte schätze ein, wie Du dieses Gefühl ausgedrückt hast:"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="20dp"
-        android:typeface="sans"/>
+        android:typeface="sans" />
 
     <TextView
         android:layout_width="wrap_content"

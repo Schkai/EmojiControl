@@ -71,79 +71,92 @@
             android:checked="false"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
-            android:text="Ich habe die Situation verlassen"/>
+            android:text="Ich habe die Situation verlassen."/>
 
         <RadioButton
+            android:id="@+id/radioButton8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ich habe versucht, die Situation zu verändern"
-            android:id="@+id/radioButton8"
-            android:layout_below="@+id/radioButton7"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_below="@+id/radioButton7"
             android:checked="false"
+            android:paddingBottom="10dp"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"/>
+            android:text="Ich habe versucht, die Situation zu verändern."/>
 
         <RadioButton
+            android:id="@+id/radioButton9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ich habe versucht, die Situation umzudeuten (z. B. mittels Humor, Perspektivenübernahme, veränderte Ursachenzuschreibung etc.)"
-            android:id="@+id/radioButton9"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/radioButton8"
             android:checked="false"
+            android:paddingBottom="10dp"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"/>
+            android:text="Ich habe versucht, die Situation umzudeuten (z. B. mittels Humor, Perspektivenübernahme, veränderte Ursachenzuschreibung etc.)."/>
 
         <RadioButton
+            android:id="@+id/radioButton10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ich habe versucht, mich abzulenken"
-            android:id="@+id/radioButton10"
-            android:layout_below="@+id/radioButton9"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_below="@+id/radioButton9"
             android:checked="false"
+            android:paddingBottom="10dp"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"/>
+            android:text="Ich habe versucht, mich abzulenken."/>
 
         <RadioButton
+            android:id="@+id/radioButton11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ich habe eine Substanz zu mir genommen (z. B. Nikotin oder Alkohol)"
-            android:id="@+id/radioButton11"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/radioButton10"
-            android:layout_alignParentLeft="true"
             android:checked="false"
+            android:paddingBottom="10dp"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"/>
+            android:text="Ich habe eine Substanz zu mir genommen (z. B. Nikotin oder Alkohol)."/>
 
         <RadioButton
+            android:id="@+id/radioButton12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ich habe lange nachgegrübelt"
-            android:id="@+id/radioButton12"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/radioButton11"
-            android:layout_alignParentLeft="true"
             android:checked="false"
+            android:paddingBottom="10dp"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"/>
+            android:text="Ich habe lange nachgegrübelt."/>
 
         <RadioButton
+            android:id="@+id/radioButton13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ich habe gewartet, bis es vorbei geht, weil ich mich nicht in der Lage sah, irgendetwas ändern zu können"
-            android:id="@+id/radioButton13"
-            android:layout_below="@+id/radioButton12"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_below="@+id/radioButton12"
             android:checked="false"
+            android:paddingBottom="10dp"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"/>
+            android:text="Ich habe gewartet, bis es vorbei geht, weil ich mich nicht in der Lage sah, irgendetwas ändern zu können."/>
+
+        <RadioButton
+            android:id="@+id/radioButton15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/radioButton13"
+
+            android:checked="false"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="Ich habe mir überlegt, wie ich die Situation verbessern könnte." />
 
         <Button
             android:id="@+id/start4n"
@@ -160,7 +173,7 @@
             android:text="Eintrag speichern\nund zurück"
             android:id="@+id/back4n"
             android:textSize="12dp"
-            android:layout_below="@+id/radioButton13"
+            android:layout_below="@+id/radioButton15"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"/>
 
@@ -170,7 +183,7 @@
             android:text="FERTIG"
             android:id="@+id/button5n"
             android:textSize="12dp"
-            android:layout_below="@+id/radioButton13"
+            android:layout_below="@+id/radioButton15"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"/>
 

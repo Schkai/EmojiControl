@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="de.ur.emojicontrol2.Analyse3">
+
+        <TextView
+            android:id="@+id/analyse3_header"
+            style="@style/headline_aend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="Analyse: Reaktionsmuster"
+            android:textAlignment="center" />
+
+    <ListView
+        android:id="@+id/analyse3_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/analyse3_back"
+        android:layout_alignParentBottom="false"
+        android:layout_below="@+id/analyse3_description" />
+
+        <TextView
+            android:id="@+id/analyse3_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="false"
+            android:layout_below="@+id/analyse3_header"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:text="Hier ist eine Übersicht über die Durchschnittswerte deiner Reaktionsmuster:"
+            android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/analyse3_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/analyse3_home"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:text="Zurück" />
+
+    <Button
+        android:id="@+id/analyse3_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/analyse3_home"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="true"
+        android:text="Weiter" />
+
+    <Button
+        android:id="@+id/analyse3_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:text="Zurück zur Startseite" />
+    </RelativeLayout>
+

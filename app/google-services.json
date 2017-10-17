@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "304706244287",
+    "firebase_url": "https://emojicontrol.firebaseio.com",
+    "project_id": "emojicontrol",
+    "storage_bucket": "emojicontrol.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304706244287:android:88d9d21eb178a49e",
+        "android_client_info": {
+          "package_name": "de.ur.emojicontrol2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "304706244287-gmba3mf6grp27chv07pp5h14e5b8423j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "de.ur.emojicontrol2",
+            "certificate_hash": "2e50c317259e2e5f63d872a03bd7ad859b055832"
+          }
+        },
+        {
+          "client_id": "304706244287-irgkl6fr4n8taah98ag13v6kadr94sc7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDegtQnLtT6ZF1hxllyXhFIhGFucENWHLs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "304706244287-irgkl6fr4n8taah98ag13v6kadr94sc7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

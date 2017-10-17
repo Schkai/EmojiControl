@@ -53,49 +53,49 @@
         >
 
         <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Der Auslöser war in dem Moment, als das Gefühl auftrat, örtlich oder zeitlich anwesend"
             android:id="@+id/radioButton2"
-            android:checked="false"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"/>
-
-        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Der Auslöser liegt in der Vergangenheit und die Erinnerung daran hat das Gefühl ausgelöst"
+            android:checked="false"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="... in dem Moment, als das Gefühl auftrat, örtlich oder zeitlich anwesend."/>
+
+        <RadioButton
             android:id="@+id/radioButton"
-            android:layout_alignBottom="@+id/radioGroup"
-            android:layout_alignRight="@+id/emoji0"
-            android:layout_alignEnd="@+id/emoji0"
-            android:checked="false"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"/>
-
-        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Der Auslöser liegt in der Zukunft und Gedanken daran haben das Gefühl ausgelöst"
-            android:id="@+id/radioButton3"
+            android:layout_alignBottom="@+id/radioGroup"
+            android:layout_alignEnd="@+id/emoji0"
+            android:layout_alignRight="@+id/emoji0"
             android:checked="false"
+            android:paddingBottom="10dp"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"/>
+            android:text="... liegt in der Vergangenheit und die Erinnerung daran hat das Gefühl ausgelöst."/>
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="... liegt in der Zukunft und Gedanken daran haben das Gefühl ausgelöst."/>
     </RadioGroup>
 
     <TextView
+        android:id="@+id/textView10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/textView10"
-        android:typeface="sans"
-        android:textSize="20dp"
-        android:textAlignment="center"
-        android:text="Wie sehr bist Du oder andere für das Auftreten des Gefühls verantwortlich?"
-        android:paddingBottom="20dp"
         android:layout_below="@+id/radioGroup"
         android:layout_centerHorizontal="true"
-        android:paddingTop="20dp"/>
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:text="Wie sehr warst Du oder andere für das Auftreten des Gefühls verantwortlich?"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20dp"
+        android:typeface="sans" />
 
     <RatingBar
         android:layout_width="wrap_content"

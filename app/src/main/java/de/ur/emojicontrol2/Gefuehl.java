@@ -113,15 +113,15 @@ public class Gefuehl extends AppCompatActivity
 
         RatingBar ratingBar = (RatingBar) findViewById(R.id.ratingBar20);
         value = ratingBar.getRating();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Mimik_Gestik").setValue(value);
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Mimik_Gestik").setValue(value*2);
 
         RatingBar ratingBar1 = (RatingBar) findViewById(R.id.ratingBar21);
         value = ratingBar1.getRating();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Verbale_Äußerung").setValue(value);
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Verbale_Äußerung").setValue(value*2);
 
         RatingBar ratingBar2 = (RatingBar) findViewById(R.id.ratingBar22);
         value = ratingBar2.getRating();
-        myRef.child(key).child(year+month+day).child(hour+minute).child("Verhaltensimpuls_nachgebend").setValue(value);
+        myRef.child(key).child(year+month+day).child(hour+minute).child("Verhaltensimpuls_nachgebend").setValue(value*2);
 
         Toast toast = Toast.makeText(Gefuehl.this, "Eintrag gespeichert", Toast.LENGTH_SHORT);
         toast.show();

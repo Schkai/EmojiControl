@@ -74,19 +74,20 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/headline0"
         android:padding="10dp"
-        android:text="Wie intensiv ist dieses Gefühl?"
+        android:text="Wie intensiv war dieses Gefühl?"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="20dp"
-        android:typeface="sans"/>
+        android:typeface="sans" />
 
     <RatingBar
+        android:id="@+id/ratingBar0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ratingBar0"
-        android:numStars="5"
         android:layout_below="@+id/high0"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:numStars="5"
+        android:stepSize="0.1" />
 
     <Button
         android:layout_width="wrap_content"
